@@ -12,9 +12,36 @@
     p{
     font-size: 20px;
     }
+    m{
+             font-size: 14px;
+             color: red;
+             font-weight: lighter;
+             
+             display: none;
+        }
 </style>
 </head>
 <body>
+  <script>
+function validate(){
+            var name=document.getElementById("fn");
+            var email=document.getElementById("sn");
+            if(name.value.trim()==""||email.value.trim()=="") 
+            {  if(name.value.trim()==""){document.getElementById("er1").style.display="block";}
+               if(email.value.trim()==""){document.getElementById("er3").style.display="block";}
+               
+               
+               return false;
+             }
+
+             else{
+                return true;
+              }
+
+}
+
+
+  </script>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; width: 100%; z-index: 1;">
       <a class="navbar-brand" href="#">Nandana Pradeep</a>
@@ -60,7 +87,7 @@
           <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card">
-                <img class="card-img-top" src="monitor.gif" alt="Portfolio Item 1" style="height: 300px; width: 300px;">
+                <img class="card-img-top" src="monitor.gif" alt="Portfolio Item 1" style="height: 250px; width: 280px;">
                 <div class="card-body">
                   <h4 class="card-title text-center">Programming in C</h4>
                   
@@ -69,7 +96,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card">
-                <img class="card-img-top" src="html.gif" alt="Portfolio Item 2" style="height: 300px; width: 300px;">
+                <img class="card-img-top" src="html.gif" alt="Portfolio Item 2" style="height: 250px; width: 280px;">
                 <div class="card-body">
                   <h4 class="card-title text-center">Html</h4>
                  
@@ -78,7 +105,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card">
-                  <img class="card-img-top" src="design.gif" alt="Portfolio Item 2" style="height: 300px; width: 300px;">
+                  <img class="card-img-top" src="design.gif" alt="Portfolio Item 2" style="height: 250px; width: 280px;">
                   <div class="card-body">
                     <h4 class="card-title text-center">Web Design</h4>
                     
@@ -91,9 +118,9 @@
       </section>
     <section id="portfolio" class="py-5 bg-light">
       <div class="container mt-5">
-        <h2 class="text-center mb-4">My Works</h2>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 mb-4">
+        <h2 class="text-center mb-5">Works</h2>
+        <div class="row ">
+          <div class="col-lg-6 col-md-6 mb-4 ">
             <div class="card">
               <img class="card-img-top" src="Screenshot 2023-03-18 212933.png" alt="Portfolio Item 1">
               <div class="card-body">
@@ -118,9 +145,9 @@
 
     <section id="contact" class="py-5">
       <div class="container mt-5">
-        <h2 class="text-center mb-4">Contact Me</h2>
+        <h2 class="text-center mb-4 ">Contact Me</h2>
         <div class="row justify-content-center">
-          <div class="col-md-6">
+          <div class="col-md-6 pt-5">
             <p>If you'd like to get in touch, feel free to reach out via the following methods:</p>
             <ul class="list-unstyled">
               <li><i class="fa fa-envelope mr-2"></i>Email: nandanapradeep1299@gmail.com</li>
@@ -129,8 +156,31 @@
              
             </ul>
           </div>
+          <div class="col-md-6 pt-5">
+           <form onsubmit="return validate()">
+            <div class="form-group">
+                
+              <input type="text" class="form-control" id="fn"  placeholder="Enter name">
+              <m id="er1"> Please Enter Name</m>
+            </div>
+            
+              <div class="form-group">
+                
+                <input type="email" class="form-control" id="sn" aria-describedby="emailHelp" placeholder="Enter email">
+                <m id="er3"> Please Enter Email</m>
+              </div>
+             
+              <div class="form-group">
+                
+                <textarea class="form-control"  rows="3" placeholder="Message"></textarea>
+              </div>
+             
+              <button type="submit" class="btn btn-primary" style="width:190px; border-radius: 19px;">Send Message</button>
+            </form>
+          </div>
         </div>
       </div>
+     
     </section>
     
   </main>
